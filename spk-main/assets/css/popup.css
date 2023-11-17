@@ -2,13 +2,35 @@
       display: none;
     }
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: 10;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 60%; /* Sesuaikan dengan kebutuhan Anda */
+  max-width: 500px; /* Atur lebar maksimum jika perlu */
+}
+
+/* Center the modal vertically and horizontally */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* The Close Button */
@@ -24,4 +46,11 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Tambahkan aturan media query untuk layar kecil, seperti pada perangkat Android */
+@media only screen and (max-width: 600px) {
+  .modal-content {
+    width: 90%; /* Sesuaikan ukuran sesuai kebutuhan Anda pada layar kecil */
+  }
 }
