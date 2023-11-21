@@ -25,56 +25,48 @@
     <link rel="stylesheet" href="assets/css/spacing.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/popup.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
   </head>
 
   <body>
-    <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+    
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="./assets/img/popup/pop1.jpg" alt="" srcset="">
-  </div>
 
-</div>
 
+
+
+    <!-- Tambahkan style="display: none;" untuk menyembunyikan tombol -->
+<button id="myButton" class="btn btn-primary" style="display: none;" onclick="showSweetAlert()">Tampilkan SweetAlert</button>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the modal
-  var modal = document.getElementById("myModal");
+  // Fungsi ini akan dipanggil otomatis saat halaman dimuat
+  document.addEventListener("DOMContentLoaded", function() {
+    showSweetAlert();
+  });
 
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-    modal.style.display = "block";
-  }
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
-  // Auto-open the modal
-  btn.click();
+  function showSweetAlert() {
+    Swal.fire({
+      title: 'Reminder',
+      text: 'Jangan lupa membayar iuran anggota untuk bulan November. Silakan login untuk melakukan pembayaran',
+      // imageUrl: 'https://unsplash.it/400/200',
+      // imageAlt: 'Reminder',
+      // imageWidth: 400,
+      // imageHeight: 200,
+      confirmButtonText: 'Login',
+    }).then(function() {
+    window.location = "https://spk.or.id/spk-login/auth";
 });
+  }
 </script>
+
+
+
+
 
 
     <!-- preloader -->
@@ -622,7 +614,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   <div class="tp-about-progress">
                     <div class="tp-about-progress-item fix">
                       <h4>Jumlah Anggota</h4>
-                      <span class="progress-count">85 Anggota</span>
+                      <span class="progress-count">94 Anggota</span>
                       <div class="progress">
                         <div
                           class="progress-bar wow slideInLeft"

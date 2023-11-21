@@ -1,0 +1,21 @@
+function showSweetAlert() {
+  Swal.fire({
+    title: 'Reminder',
+    text: 'Jangan lupa membayar iuran anggota untuk bulan November. Silakan login untuk melakukan pembayaran',
+    // imageUrl: 'https://unsplash.it/400/200',
+    // imageAlt: 'Reminder',
+    // imageWidth: 400,
+    // imageHeight: 200,
+    confirmButtonText: 'Ok',
+    cancelButtonText: 'Close',
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    }
+  }).then(function(result) {
+    // Arahkan pengguna ke beranda YouTube saat tombol "Ok" atau "Close" ditekan
+    if (result.isConfirmed || result.dismiss === Swal.DismissReason.cancel) {
+      window.location.href = 'https://www.youtube.com/';
+    }
+  });
+}
