@@ -32,12 +32,8 @@
 
   <body>
 
-    
-
-
-
-
-
+          <!-- Sweetalert -->
+          
     <!-- Tambahkan style="display: none;" untuk menyembunyikan tombol -->
 <button id="myButton" class="btn btn-primary" style="display: none;" onclick="showSweetAlert()">Tampilkan SweetAlert</button>
 
@@ -58,13 +54,13 @@
       // imageWidth: 400,
       // imageHeight: 200,
       confirmButtonText: 'Login',
-    }).then(function() {
-    window.location = "https://spk.or.id/spk-login/auth";
+    }).then(function (result) {
+  if (result.isConfirmed) {window.location = "https://spk.or.id/spk-login/auth";}
 });
   }
 </script>
 
-
+          <!-- Sweetalert -->
 
 
 
